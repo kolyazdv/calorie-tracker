@@ -1,0 +1,29 @@
+<!-- app/views/profiles/show.html.erb -->
+
+<div class="max-w-xl mx-auto mt-12 p-6 bg-white rounded-xl shadow-md space-y-4">
+  <h1 class="text-2xl font-bold text-center text-gray-800">👤 Профиль пользователя</h1>
+
+  <div class="grid grid-cols-2 gap-4 text-gray-700">
+    <div class="font-semibold">Email:</div>
+    <div><%= @user.email %></div>
+
+    <div class="font-semibold">Рост (см):</div>
+    <div><%= @user.height || 'не указано' %></div>
+
+    <div class="font-semibold">Вес (кг):</div>
+    <div><%= @user.weight || 'не указано' %></div>
+
+    <div class="font-semibold">Возраст:</div>
+    <div><%= @user.age || 'не указано' %></div>
+
+    <div class="font-semibold">Пол:</div>
+    <div><%= @user.gender&.capitalize || 'не указано' %></div>
+
+    <div class="font-semibold">Цель:</div>
+    <div><%= @user.goal || 'не указано' %></div>
+  </div>
+
+  <div class="text-center mt-6">
+    <%= link_to "Редактировать профиль", edit_user_registration_path, class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+</div>
